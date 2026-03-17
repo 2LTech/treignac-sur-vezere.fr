@@ -23,13 +23,13 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: echo "manager=yarn" >> $GITHUB_OUTPUT
+      - name: Corepack
+        run: corepack enable
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Corepack
-        run: corepack enable
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
