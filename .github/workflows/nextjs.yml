@@ -41,10 +41,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: yarn
-      - name: Sitemap
-        run: yarn sitemap
       - name: Build with Next.js
         run: yarn build
+      - name: Sitemap
+        run: yarn sitemap
+      - name: Copy sitemap & robots.txt
+        run: cp public/robots.txt out/ && cp public/sitemap*.xml out/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
