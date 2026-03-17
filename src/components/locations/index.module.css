@@ -1,0 +1,28 @@
+.head {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.airBnB {
+  display: flex;
+  justify-content: center;
+}
+
+.airBnB :global(.airbnb-embed-frame) {
+  margin: 0 !important;
+}
+
+@media (max-width: 1200px) {
+  .head {
+    grid-template-columns: 100%;
+    gap: 5px;
+  }
+
+  .head div:last-of-type {
+    grid-row: 1;
+  }
+
+  .head div:first-of-type {
+    grid-row: 2;
+  }
+}

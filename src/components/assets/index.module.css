@@ -1,0 +1,85 @@
+.layout {
+  height: 100vh;
+}
+
+.marginTop {
+  margin-top: 32px;
+}
+
+.locationCard {
+  max-width: 50%;
+}
+
+.carousel {
+  max-width: 100%;
+  margin-bottom: 36px;
+}
+
+.carousel :global(.figure) {
+  margin-bottom: 20px;
+}
+
+.carousel :global(.figure) img {
+  max-width: 80%;
+  max-height: 500px;
+  margin: auto;
+}
+
+.carousel :global(.figcaption) {
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+}
+
+.carousel :global(.slick-track) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.carousel :global(.slick-prev),
+.carousel :global(.slick-next),
+.carousel :global(.slick-prev:hover),
+.carousel :global(.slick-next:hover) {
+  font-size: inherit;
+  color: #f6511d !important;
+}
+
+.carouselDots li button {
+  background-color: #f6511d !important;
+}
+
+.citation::before {
+  content: '«';
+  font-size: 26px;
+  margin-left: -20px;
+}
+
+.citation {
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.citationDescription {
+  text-align: right;
+  margin-bottom: -35px !important;
+}
+
+.citation::after {
+  content: '»';
+  font-size: 26px;
+  margin-left: -20px;
+}
+
+@media (max-width: 768px) {
+  .marginTop {
+    margin-top: 16px;
+  }
+
+  .locationCard {
+    max-width: unset;
+  }
+
+  .carousel {
+    margin-bottom: 16px;
+  }
+}

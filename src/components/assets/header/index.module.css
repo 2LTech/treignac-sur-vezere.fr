@@ -1,0 +1,40 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.header {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px !important;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.menu {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px !important;
+    padding: 0 16px !important;
+  }
+  .title {
+    font-size: 16px;
+  }
+
+  .title img {
+    width: 60px;
+    height: 60px;
+  }
+}
