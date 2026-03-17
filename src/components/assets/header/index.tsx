@@ -33,6 +33,7 @@ const items = [
     key: 'liens',
     label: 'Liens utiles',
     icon: <ApiTwoTone />,
+    popupOffset: [-150, 35],
     children: liens.map((lien) => ({
       key: lien.key,
       label: (
