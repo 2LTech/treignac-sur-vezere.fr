@@ -41,6 +41,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: yarn
+      - name: Sitemap
+        run: yarn sitemap
       - name: Build with Next.js
         run: yarn build
       - name: Upload artifact

@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <Layout.Header className={styles.header}>
       <Link href='/' className={styles.title}>
-        <Image src='img/logo.png' width={100} height={100} alt='' />
+        <Image src='/img/logo.png' width={100} height={100} alt='' />
         <span style={{ color: theme?.token?.colorPrimary }}>
           Treignac-sur-Vézère
         </span>

@@ -23,7 +23,7 @@ const Footer = () => {
       <div>
         Conçu avec{' '}
         <Image
-          src='img/footer/heart.svg'
+          src='/img/footer/heart.svg'
           alt='amour'
           className={styles.heart}
           width={14}
