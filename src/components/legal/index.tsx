@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Layout } from 'antd'
 
 import Footer from '@/components/assets/footer'
@@ -43,6 +44,12 @@ const Legal = () => {
           </li>
         </ul>
         <h1>2 - Propriété intellectuelle et contrefaçons.</h1>
+        <Link
+          href='https://commons.wikimedia.org/wiki/File:Bruy%C3%A8re_sur_les_Mon%C3%A9di%C3%A8res.jpg'
+          target='_blank'
+        >
+          Attribution fond d'écran
+        </Link>
         <p>
           La Société SCI GARNOTEL TREIGNAC 1 est propriétaire des droits de
           propriété intellectuelle et détient les droits d’usage sur tous les

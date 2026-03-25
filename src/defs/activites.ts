@@ -1,9 +1,16 @@
 export interface Activite {
   key: string
   data: {
-    type: ('adresse' | 'randonnee' | 'exterieur' | 'gastronomie')[]
+    type: (
+      | 'adresse'
+      | 'randonnee'
+      | 'exterieur'
+      | 'gastronomie'
+      | 'sante'
+      | 'bien-etre'
+    )[]
     label: string
-    description: string
+    description?: string
     img?: string
     link?: string
     facebook?: string
@@ -68,7 +75,7 @@ const activites: Activite[] = [
       label: "Les P'tites Cagettes - Boutique de producteurs de Treignac",
       description:
         "Vous trouverez dans la boutique tous les produits d'une épicerie classique, avec un maximum de produits locaux : viandes locales, fromages, pain, vins, bières locales, kéfirs et pétillants, truite de la Vézère, fruits et légumes, savons, etc...",
-      img: 'https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/629221932_122098823013251275_867299611713013043_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=B5fXc-QrES8Q7kNvwEWnCrZ&_nc_oc=Adkf3m2embBF7R2F2wZBGE7hztHH6v198Q7oeoUKbX6ykzJSJRIFbZdr2gkZa0FOVzDQrth-1Tdj7c7N9hFU4dTY&_nc_zt=23&_nc_ht=scontent-cdg4-2.xx&_nc_gid=Z6ajWsUeQZijx-4Om9ovUA&_nc_ss=8&oh=00_AfwwBqLmrU0-x7RBBS7srwIjx3Xeys181kYoXseEntDAlA&oe=69BDD858',
+      img: 'https://lesptitescagettes.org/img/home/bicycle.svg',
       link: 'https://lesptitescagettes.org/',
       facebook: 'https://www.facebook.com/profile.php?id=61587538262303',
       maps: 'https://maps.app.goo.gl/PJdt8VRhx4EF1dis9',
@@ -117,6 +124,142 @@ const activites: Activite[] = [
       img: 'https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/470221707_10236284681846899_1402060763787044016_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=2a1932&_nc_ohc=2ga4LKtaO_8Q7kNvwHAov6P&_nc_oc=Admf_DPyMkx2FNSdbN9kwQB9Ota8w2aRb6jm7grYqDHySoWfA_lKLONaP10EBfq9GTwPrgmLUp5zCMxEixeKwm9C&_nc_zt=23&_nc_ht=scontent-cdg4-2.xx&_nc_gid=tDwTFecQmSi0ai7zHhH_cg&_nc_ss=8&oh=00_AfxJaphYbq71hLmx-lbxngrtIH5pOwRxFY0KLQdmspLYOw&oe=69BE1172',
       facebook: 'https://www.facebook.com/profile.php?id=61570254947637',
       maps: 'https://maps.app.goo.gl/FMJajkkBcjrMLwL76',
+    },
+  },
+  {
+    key: 'clinique-veterinaire-du-lac',
+    data: {
+      type: ['sante'],
+      label: 'Clinique véterinaire du lac',
+      img: 'https://cliniqueveterinairedulac19.com/images/logo-web.webp',
+      link: 'https://cliniqueveterinairedulac19.com/',
+      facebook: 'https://www.facebook.com/clinique.veterinaire.treignac',
+      maps: 'https://maps.app.goo.gl/DCgRxdBDyYazZcPN7',
+    },
+  },
+  {
+    key: 'pharmacie-nouaille',
+    data: {
+      type: ['sante'],
+      label: 'Pharmacie Nouaille',
+      img: 'https://pharmacienouaille.fr/wp-content/uploads/2019/02/background_img.jpg',
+      link: 'https://pharmacienouaille.fr/',
+      maps: 'https://maps.app.goo.gl/X54rJnKG7KndZZMg7',
+    },
+  },
+  {
+    key: 'chalard',
+    data: {
+      type: ['gastronomie'],
+      label: 'Primeurs Chalard',
+      maps: 'https://maps.app.goo.gl/P6hNRRuKdpWKB4jU8',
+    },
+  },
+  {
+    key: 'domaine-treignac',
+    data: {
+      type: ['gastronomie', 'adresse'],
+      label: 'Le domaine de Treignac',
+      img: 'https://local-fr-public.s3.eu-west-3.amazonaws.com/prod/webtool/userfiles/49411/logo.PNG',
+      link: 'https://www.domaine-de-treignac.fr/restaurant-et-menu',
+      facebook: 'https://www.facebook.com/profile.php?id=100083000329033',
+      instagram: 'https://www.instagram.com/domainedetreignac/',
+      maps: 'https://maps.app.goo.gl/FcTzarnrYJYpRYwJ9',
+    },
+  },
+  {
+    key: 'la-brasserie',
+    data: {
+      type: ['adresse', 'gastronomie'],
+      label: 'La Brasserie',
+      img: 'https://www.monsamm.com/gallery/639a2783219dd5.00045003-lg.webp',
+      link: 'https://www.labrasserietreignac.fr/',
+      facebook: 'https://www.facebook.com/Labrasserietreignac#',
+      maps: 'https://maps.app.goo.gl/u838YuAiFb3tPYpx6',
+    },
+  },
+  {
+    key: 'treignac brocante',
+    data: {
+      type: ['adresse'],
+      label: 'Treignac Brocante',
+      facebook: 'https://www.facebook.com/galeriedeshalles',
+      maps: 'https://maps.app.goo.gl/QpjqQKDL2xXTXmb79',
+    },
+  },
+  {
+    key: 'maison-campagne',
+    data: {
+      type: ['adresse'],
+      label: 'Maison de Campagne Déco',
+      link: 'https://www.maison-campagne-deco.com/',
+      img: 'https://primary.jwwb.nl/public/u/y/f/temp-gfnjvuashrvzzdlgudpr/flea-market-1262036-standard.jpg',
+      maps: 'https://maps.app.goo.gl/QHkXkLZdgBcpG7Qh6',
+    },
+  },
+  {
+    key: 'mille-morceaux-mosaique',
+    data: {
+      type: ['adresse'],
+      label: 'Mille Morceaux Mosaïque',
+      facebook:
+        'https://www.facebook.com/p/Mille-Morceaux-Mosaique-100071779121922/?locale=fr_FR',
+      maps: 'https://maps.app.goo.gl/q3QiVQjZHjaGW58f7',
+    },
+  },
+  {
+    key: 'boucherie-rousseau',
+    data: {
+      type: ['adresse', 'gastronomie'],
+      label: 'Boucherie Rousseau',
+      facebook:
+        'https://www.facebook.com/p/Boucherie-Rousseau-100089308996474/',
+      maps: 'https://maps.app.goo.gl/QfQokfzKGT4cUZLaA',
+    },
+  },
+  {
+    key: 'de-la-cave-a-la-table',
+    data: {
+      type: ['adresse', 'gastronomie'],
+      label: 'De la Cave à la Table',
+      facebook:
+        'https://www.facebook.com/p/DE-LA-CAVE-A-LA-TABLE-100050507364444/?locale=fr_FR',
+      maps: 'https://maps.app.goo.gl/YgZg1d1Mx4TUzjwL7',
+    },
+  },
+  {
+    key: 'au-jardin-des-dames',
+    data: {
+      type: ['adresse', 'bien-etre'],
+      label: 'Au Jardin des Dames',
+      link: 'https://www.planity.com/institut-au-jardin-des-dames-19260-treignac',
+      facebook: 'https://www.facebook.com/Emma.au.jardin.des.dames',
+      maps: 'https://maps.app.goo.gl/UfhCQpDYwDVBC5XDA',
+    },
+  },
+  {
+    key: 'kb-coiffure',
+    data: {
+      type: ['adresse', 'bien-etre'],
+      label: 'KB coiffure',
+      facebook: 'https://www.facebook.com/p/KB-coiffure-100057478928198/',
+      maps: 'https://maps.app.goo.gl/MkDvD7nhzaXcT5xv7',
+    },
+  },
+  {
+    key: 'beau-bien-bio',
+    data: {
+      type: ['adresse', 'bien-etre'],
+      label: 'Beau Bien Bio',
+      maps: 'https://maps.app.goo.gl/wYLeLa4uaPrJM67r7',
+    },
+  },
+  {
+    key: 'chadaud-nathalie',
+    data: {
+      type: ['adresse', 'bien-etre'],
+      label: 'Chadaud Nathalie',
+      maps: 'https://maps.app.goo.gl/9Jezvxq9M2gBTsuEA',
     },
   },
 ]

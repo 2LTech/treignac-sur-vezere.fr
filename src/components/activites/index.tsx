@@ -1,14 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import { Card, Empty, Layout, Masonry, Tooltip } from 'antd'
+import { Card, Layout, Masonry, Tooltip } from 'antd'
 import {
   FacebookFilled,
+  HeartFilled,
   InstagramFilled,
   LinkOutlined,
   NodeIndexOutlined,
   SendOutlined,
   ShopFilled,
+  SmileOutlined,
   TikTokFilled,
 } from '@ant-design/icons'
 
@@ -22,6 +24,18 @@ import BeachFilled from '@/components/assets/icons/beach'
 import styles from '@/components/assets/index.module.css'
 
 import activites, { Activite } from '@/defs/activites'
+
+const shuffle = (array: any[]) => {
+  let i = array.length
+  while (--i > 0) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let temp = array[j]
+    array[j] = array[i]
+    array[i] = temp
+  }
+}
+
+shuffle(activites)
 
 const itemRender = ({ data }: { data: Activite['data'] }) => {
   const actions = []
@@ -56,7 +70,7 @@ const itemRender = ({ data }: { data: Activite['data'] }) => {
       </Link>,
     )
 
-  let cover = <Empty description='Aucune image...' style={{ margin: 16 }} />
+  let cover = undefined
   if (data.img) cover = <img src={data.img} alt='' />
 
   let avatar = []
@@ -82,6 +96,18 @@ const itemRender = ({ data }: { data: Activite['data'] }) => {
     avatar.push(
       <Tooltip key='exterieur' title='Activité extérieure'>
         <BeachFilled />
+      </Tooltip>,
+    )
+  if (data.type.includes('sante'))
+    avatar.push(
+      <Tooltip key='sante' title='Santé'>
+        <HeartFilled />
+      </Tooltip>,
+    )
+  if (data.type.includes('bien-etre'))
+    avatar.push(
+      <Tooltip key='bien-etre' title='Bien-être'>
+        <SmileOutlined />
       </Tooltip>,
     )
 
