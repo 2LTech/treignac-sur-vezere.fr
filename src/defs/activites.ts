@@ -454,6 +454,17 @@ const activites: Activite[] = [
       maps: 'https://maps.app.goo.gl/1yWnddD1hgxxKD536',
     },
   },
+  {
+    key: 'le-nat-elier',
+    data: {
+      type: ['adresse'],
+      label: 'Le Nat’elier',
+      description:
+        'Retouches, ourlets, fermetures, rideaux. Réparations doudous. Créations accessoires, sacs, pochettes ...',
+      img: '/img/activites/le-nat-elier.jpg',
+      maps: 'https://maps.app.goo.gl/VwUNTuNfNDrAUAat8',
+    },
+  },
 ]
 
 export default activites
