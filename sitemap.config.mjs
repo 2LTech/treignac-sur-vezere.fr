@@ -1,16 +1,16 @@
 /** @type {import('next-sitemap').IConfig} */
 const sitemapConfig = {
-  siteUrl: 'https://lesptitescagettes.org',
+  siteUrl: 'https://treignac-sur-vezere.fr',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: '/legal'
-      }
-    ]
-  }
+        disallow: '/legal',
+      },
+    ],
+  },
 }
 
 export default sitemapConfig

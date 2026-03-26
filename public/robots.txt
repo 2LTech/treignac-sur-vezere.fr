@@ -4,7 +4,7 @@ Allow: /
 Disallow: /legal
 
 # Host
-Host: https://lesptitescagettes.org
+Host: https://treignac-sur-vezere.fr
 
 # Sitemaps
-Sitemap: https://lesptitescagettes.org/sitemap.xml
+Sitemap: https://treignac-sur-vezere.fr/sitemap.xml

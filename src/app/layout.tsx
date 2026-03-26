@@ -35,7 +35,9 @@ export default function RootLayout({
         <AntdRegistry>
           <ConfigProvider theme={theme}>
             <div className='background'></div>
-            <div className='content'>{children}</div>
+            <div className='globalContent'>
+              <div className='content'>{children}</div>
+            </div>
           </ConfigProvider>
         </AntdRegistry>
       </body>
