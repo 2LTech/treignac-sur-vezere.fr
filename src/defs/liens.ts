@@ -35,6 +35,11 @@ const liens: Lien[] = [
     label: 'Rando Millevaches en Limousin',
     url: 'https://rando-millevaches.fr/',
   },
+  {
+    key: 'intramuros',
+    label: 'Intramuros Treignac',
+    url: 'https://www.intramuros.org/treignac',
+  },
 ]
 
 export default liens
