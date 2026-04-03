@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Treignac-sur-Vézère',
   description: 'Petite cité de caractère',
+  other: {
+    'google-adsense-account': 'ca-pub-2305699088219296',
+  },
 }
 
 export default function RootLayout({
