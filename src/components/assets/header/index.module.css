@@ -23,6 +23,10 @@
   align-self: center;
 }
 
+.title span {
+  line-height: 16px;
+}
+
 .menu {
   min-width: 0;
   flex: auto;
