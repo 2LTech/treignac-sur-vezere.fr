@@ -1,11 +1,6 @@
-:root {
-  --background: rgba(255, 255, 255, 0.75);
-  --foreground: #171717;
-}
-
 .content {
   padding: 50px;
-  background: var(--background);
+  background: rgba(255, 255, 255, 0.75);
   overflow: hidden;
 }
 
