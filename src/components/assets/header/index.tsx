@@ -67,13 +67,13 @@ const Header = () => {
    */
   return (
     <Layout.Header className={styles.header}>
+      <Menu mode='horizontal' className={styles.menu} items={items} />
       <Link href='/' className={styles.title}>
         <Image src='/img/logo.png' width={64} height={64} alt='' />
         <span style={{ color: theme?.token?.colorPrimary }}>
           Treignac-sur-Vézère
         </span>
       </Link>
-      <Menu mode='horizontal' className={styles.menu} items={items} />
     </Layout.Header>
   )
 }

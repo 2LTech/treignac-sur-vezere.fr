@@ -25,6 +25,7 @@
 
 .menu {
   min-width: 0;
+  flex: auto;
   border-bottom: none !important;
 }
 
