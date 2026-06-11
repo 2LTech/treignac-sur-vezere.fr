@@ -1,6 +1,8 @@
 'use client'
 
-import { Carousel, Layout, Typography } from 'antd'
+import Carousel from 'antd/es/carousel'
+import Layout from 'antd/es/layout'
+import Typography from 'antd/es/typography'
 import Script from 'next/script'
 
 import Header from '@/components/assets/header'

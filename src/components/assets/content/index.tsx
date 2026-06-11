@@ -1,4 +1,4 @@
-import { Layout } from 'antd'
+import Layout from 'antd/es/layout'
 
 import styles from './index.module.css'
 

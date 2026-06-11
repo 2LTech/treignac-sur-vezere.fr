@@ -1,7 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Card, Layout, Masonry, Tooltip } from 'antd'
+import Card from 'antd/es/card'
+import Layout from 'antd/es/layout'
+import Masonry from 'antd/es/masonry'
+import Tooltip from 'antd/es/tooltip'
 import {
   FacebookFilled,
   HeartFilled,

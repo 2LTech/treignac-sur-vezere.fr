@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Layout, Menu } from 'antd'
+import Layout from 'antd/es/layout'
+import Menu from 'antd/es/menu'
 import {
   ApiTwoTone,
   CompassTwoTone,

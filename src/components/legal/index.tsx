@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Layout } from 'antd'
+import Layout from 'antd/es/layout'
 
 import Footer from '@/components/assets/footer'
 import Header from '@/components/assets/header'

@@ -1,7 +1,11 @@
 .footer {
-  background: rgba(255, 255, 255, 0.95) !important;
+  border-top: 1px solid rgba(31, 53, 41, 0.08);
+  background: rgba(255, 255, 255, 0.86) !important;
+  color: #46544c;
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+  backdrop-filter: blur(16px);
 }
 
 .heart {

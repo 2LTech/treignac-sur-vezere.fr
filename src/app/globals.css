@@ -8,19 +8,29 @@ body {
 }
 
 body {
-  background: #ffffff;
-  color: #171717;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #eef3ee;
+  color: #1f3529;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 .background {
-  position: absolute;
+  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('/img/background.jpg');
   background-size: cover;
-  opacity: 0.5;
+  background-position: center;
   z-index: 1;
+}
+
+.background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(238, 243, 238, 0.6), #eef3ee 78%),
+    radial-gradient(circle at 16% 12%, rgba(246, 81, 29, 0.12), transparent 36%);
 }
 
 .globalContent {
@@ -34,7 +44,12 @@ body {
 
 .content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   min-height: 100vh;
   z-index: 2;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }

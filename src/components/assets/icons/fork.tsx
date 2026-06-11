@@ -1,6 +1,6 @@
 import Icon from '@ant-design/icons'
 
-import type { GetProps } from 'antd'
+import type { GetProps } from 'antd/es/_util/type'
 
 type CustomIconComponentProps = GetProps<typeof Icon>
 

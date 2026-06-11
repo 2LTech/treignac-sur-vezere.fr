@@ -1,6 +1,8 @@
 'use client'
 
-import { Button, Card, Layout } from 'antd'
+import Button from 'antd/es/button'
+import Card from 'antd/es/card'
+import Layout from 'antd/es/layout'
 
 import Header from '@/components/assets/header'
 import Footer from '@/components/assets/footer'
