@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Card from "antd/es/card";
-import Layout from "antd/es/layout";
-import Masonry from "antd/es/masonry";
-import Tooltip from "antd/es/tooltip";
+import Image from "next/image";
+import { Card, Layout, Masonry, Tooltip } from "antd";
 import {
   FacebookFilled,
   HeartFilled,
@@ -83,7 +81,17 @@ const itemRender = (
     );
 
   let cover = undefined;
-  if (data.img) cover = <img src={data.img} alt="" />;
+  if (data.img)
+    cover = (
+      <Image
+        src={data.img}
+        alt=""
+        width={500}
+        height={500}
+        style={{ height: "auto" }}
+        loading="eager"
+      />
+    );
 
   const avatar = [];
   if (data.type.includes("adresse"))

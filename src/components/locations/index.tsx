@@ -1,31 +1,40 @@
-'use client'
+"use client";
 
-import Button from 'antd/es/button'
-import Card from 'antd/es/card'
-import Layout from 'antd/es/layout'
+import Link from "next/link";
+import Image from "next/image";
+import { Button, Card, Layout } from "antd";
 
-import Header from '@/components/assets/header'
-import Footer from '@/components/assets/footer'
-import Content from '@/components/assets/content'
+import Header from "@/components/assets/header";
+import Footer from "@/components/assets/footer";
+import Content from "@/components/assets/content";
 
-import { useI18n } from '@/i18n/provider'
+import { useI18n } from "@/i18n/provider";
 
-import styles from '@/components/assets/index.module.css'
-import Link from 'next/link'
+import styles from "@/components/assets/index.module.css";
 
 const Locations = () => {
-  const { t, href } = useI18n()
+  const { t, href } = useI18n();
 
   return (
     <Layout className={styles.layout}>
       <Header />
       <Content>
         <Card
-          cover={<img src='/img/une-escale-a-treignac/salon.jpg' alt='' />}
+          cover={
+            <Image
+              src="/img/une-escale-a-treignac/salon.jpg"
+              alt=""
+              width={2048}
+              height={1536}
+              style={{
+                height: "auto",
+              }}
+            />
+          }
           className={styles.locationCard}
           actions={[
-            <Link key='lien' href={href('/locations/une-escale-a-treignac')}>
-              <Button type='primary'>{t.locations.openListing}</Button>
+            <Link key="lien" href={href("/locations/une-escale-a-treignac")}>
+              <Button type="primary">{t.locations.openListing}</Button>
             </Link>,
           ]}
         >
@@ -37,7 +46,7 @@ const Locations = () => {
       </Content>
       <Footer />
     </Layout>
-  )
-}
+  );
+};
 
-export default Locations
+export default Locations;

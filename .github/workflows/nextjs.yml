@@ -2,20 +2,19 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
   build:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@main
         with:
-          node-version: '24'
+          node-version: "24"
           cache: yarn
       - name: Setup Pages
         uses: actions/configure-pages@main
@@ -54,6 +53,10 @@ jobs:
 
   # Deployment job
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

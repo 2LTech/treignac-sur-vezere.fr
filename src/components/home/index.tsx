@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Button from "antd/es/button";
-import Card from "antd/es/card";
-import Carousel from "antd/es/carousel";
-import Layout from "antd/es/layout";
-import Masonry from "antd/es/masonry";
-import Space from "antd/es/space";
-import Tag from "antd/es/tag";
-import Typography from "antd/es/typography";
+import Image from "next/image";
+import {
+  Button,
+  Card,
+  Carousel,
+  Layout,
+  Masonry,
+  Space,
+  Tag,
+  Typography,
+} from "antd";
 import {
   ArrowRightOutlined,
   CompassOutlined,
@@ -23,6 +26,7 @@ import Content from "@/components/assets/content";
 
 import { useI18n } from "@/i18n/provider";
 import { Locale } from "@/i18n/config";
+
 import citations, { Citation } from "@/defs/citations";
 import images from "@/defs/images";
 
@@ -62,9 +66,12 @@ const Home = () => {
       <Content>
         <section className={styles.hero}>
           <div className={styles.heroImage}>
-            <img
+            <Image
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Treignac_Panorama.jpg/1280px-Treignac_Panorama.jpg"
               alt={t.home.heroAlt}
+              width={1280}
+              height={618}
+              loading="eager"
             />
           </div>
           <div className={styles.heroContent}>
@@ -130,7 +137,7 @@ const Home = () => {
         >
           {images.map((image) => (
             <div key={image.key} className="figure">
-              <img src={image.src} alt={image.label[locale]} />
+              <Image src={image.src} alt={image.label[locale]} fill />
               <div className="figcaption">
                 {image.label[locale]}
                 {" - "}

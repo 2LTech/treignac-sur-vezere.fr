@@ -76,7 +76,7 @@ const Legal = () => {
         </Link>
         <p>
           {ip.paragraphs.map((paragraph, index) => (
-            <Fragment key={index}>
+            <Fragment key={paragraph}>
               {index > 0 && <br />}
               {paragraph}
             </Fragment>
@@ -86,7 +86,7 @@ const Legal = () => {
         <h1>{liability.title}</h1>
         <p>
           {liability.paragraphs.map((paragraph, index) => (
-            <Fragment key={index}>
+            <Fragment key={paragraph}>
               {index > 0 && <br />}
               {paragraph}
             </Fragment>
@@ -99,7 +99,7 @@ const Legal = () => {
         <h1>{cookies.title}</h1>
         <p>
           {cookies.paragraphs.map((paragraph, index) => (
-            <Fragment key={index}>
+            <Fragment key={paragraph}>
               {index > 0 && <br />}
               {paragraph}
             </Fragment>
