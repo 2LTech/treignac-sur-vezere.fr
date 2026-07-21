@@ -1,21 +1,27 @@
-'use client'
+"use client";
 
-import { useCallback, useEffect, useState } from 'react'
+import { useSyncExternalStore } from "react";
+
+const mediaQuery = "(max-width: 915px)";
+
+const subscribe = (callback: () => void) => {
+  const query = window.matchMedia(mediaQuery);
+  query.addEventListener("change", callback);
+
+  return () => query.removeEventListener("change", callback);
+};
+
+const getSnapshot = () => window.matchMedia(mediaQuery).matches;
+const getServerSnapshot = () => false;
 
 const useMobile = () => {
-  const [width, setWidth] = useState<number>(0)
+  const isMobile = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
 
-  const handleResize = useCallback(() => {
-    setWidth(window.innerWidth)
-  }, [])
+  return { isMobile };
+};
 
-  useEffect(() => {
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [handleResize])
-
-  return { isMobile: width <= 915 }
-}
-
-export default useMobile
+export default useMobile;

@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from 'antd/es/layout'
 
+import { useI18n } from '@/i18n/provider'
+
 import styles from './index.module.css'
 
 /**
@@ -10,6 +12,9 @@ import styles from './index.module.css'
  * @returns Footer
  */
 const Footer = () => {
+  // I18n
+  const { t, href } = useI18n()
+
   // Year
   const year = useMemo(() => new Date().getFullYear(), [])
 
@@ -18,18 +23,20 @@ const Footer = () => {
    */
   return (
     <Layout.Footer className={styles.footer}>
-      <Link href='/mentions-legales'>Mentions légales</Link>
-      <div>{year}&copy; Tous droits réservés</div>
+      <Link href={href('/mentions-legales')}>{t.footer.legal}</Link>
       <div>
-        Conçu avec{' '}
+        {year}&copy; {t.footer.rights}
+      </div>
+      <div>
+        {t.footer.designedWith}{' '}
         <Image
           src='/img/footer/heart.svg'
-          alt='amour'
+          alt={t.footer.heartAlt}
           className={styles.heart}
           width={14}
           height={14}
         />{' '}
-        par{' '}
+        {t.footer.by}{' '}
         <Link href='https://2ltech.fr/' target='_blank'>
           2LTech
         </Link>

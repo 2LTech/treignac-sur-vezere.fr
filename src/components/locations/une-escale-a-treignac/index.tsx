@@ -9,38 +9,29 @@ import Header from '@/components/assets/header'
 import Footer from '@/components/assets/footer'
 import Content from '@/components/assets/content'
 
+import { useI18n } from '@/i18n/provider'
+
 import styles from '@/components/assets/index.module.css'
 import locationsStyles from '../index.module.css'
 import images from './images'
 
 const UneEscaleATreignac = () => {
+  const { locale, t } = useI18n()
+
   return (
     <Layout className={styles.layout}>
       <Script async src='https://www.airbnb.fr/embeddable/airbnb_jssdk' />
       <Header />
       <Content>
-        <Typography.Title level={2}>Une Escale à Treignac</Typography.Title>
+        <Typography.Title level={2}>{t.escale.title}</Typography.Title>
         <div className={locationsStyles.head}>
           <div>
             <Typography>
-              <Typography.Paragraph>
-                Venez profiter en famille ou entre amis de ce fabuleux logement
-                qui offre de bons moments en perspective.
-              </Typography.Paragraph>
-              <Typography.Paragraph>
-                Rez-de-chaussée spacieux comprenant cuisine, salon, salle a
-                manger ainsi qu'un espace buanderie/toilettes.
-              </Typography.Paragraph>
-              <Typography.Paragraph>
-                À l'étage 2 grandes chambres et une salle d'eau.
-              </Typography.Paragraph>
-              <Typography.Paragraph>
-                Extérieur avec terrasse et stationnement pour un véhicule.
-              </Typography.Paragraph>
-              <Typography.Paragraph>
-                Proximité immédiate du centre-ville, accès au commerces à pied,
-                tout en étant dans une rue paisible peu passante.
-              </Typography.Paragraph>
+              {t.escale.paragraphs.map((paragraph) => (
+                <Typography.Paragraph key={paragraph}>
+                  {paragraph}
+                </Typography.Paragraph>
+              ))}
             </Typography>
 
             <Carousel
@@ -51,8 +42,8 @@ const UneEscaleATreignac = () => {
             >
               {images.map((image) => (
                 <div key={image.key} className='figure'>
-                  <img src={image.src} alt={image.label} />
-                  <div className='figcaption'>{image.label}</div>
+                  <img src={image.src} alt={image.label[locale]} />
+                  <div className='figcaption'>{image.label[locale]}</div>
                 </div>
               ))}
             </Carousel>
@@ -69,14 +60,13 @@ const UneEscaleATreignac = () => {
                 href='https://www.airbnb.fr/rooms/1634794174622461433?guests=1&amp;adults=1&amp;s=66&amp;source=embed_widget'
                 rel='nofollow'
               >
-                Voir sur Airbnb
+                {t.escale.airbnbView}
               </a>
               <a
                 href='https://www.airbnb.fr/rooms/1634794174622461433?guests=1&amp;adults=1&amp;s=66&amp;source=embed_widget'
                 rel='nofollow'
               >
-                Hébergement · Treignac · ★Nouveau · 2 chambres · 4 lits ·
-                1&nbsp;salle de bain
+                {t.escale.airbnbSummary}
               </a>
             </div>
           </div>

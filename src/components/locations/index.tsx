@@ -8,10 +8,14 @@ import Header from '@/components/assets/header'
 import Footer from '@/components/assets/footer'
 import Content from '@/components/assets/content'
 
+import { useI18n } from '@/i18n/provider'
+
 import styles from '@/components/assets/index.module.css'
 import Link from 'next/link'
 
 const Locations = () => {
+  const { t, href } = useI18n()
+
   return (
     <Layout className={styles.layout}>
       <Header />
@@ -20,14 +24,14 @@ const Locations = () => {
           cover={<img src='/img/une-escale-a-treignac/salon.jpg' alt='' />}
           className={styles.locationCard}
           actions={[
-            <Link key='lien' href='/locations/une-escale-a-treignac'>
-              <Button type='primary'>Ouvrir l'annonce</Button>
+            <Link key='lien' href={href('/locations/une-escale-a-treignac')}>
+              <Button type='primary'>{t.locations.openListing}</Button>
             </Link>,
           ]}
         >
           <Card.Meta
-            title='Une Escale à Treignac'
-            description={<>Maison 2 chambre, 4 lits, 1 salle de bain</>}
+            title={t.locations.cardTitle}
+            description={t.locations.cardDescription}
           />
         </Card>
       </Content>
